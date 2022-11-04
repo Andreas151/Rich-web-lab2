@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>CA2</title>
+    </head>
+
+    <body>
+        <script>
+            const pro_url = 'http://jsonplaceholder.typicode.com/posts' //creating a contsant of the url givene to easier call it later
+            fetch(pro_url)
+            .then(response => response.json())
+            .then(json => console.log(json))
+           /* async function getHead() {
+                const response = await fetch(pro_url);
+                console.log(response);
+            }
+            getHead();*/
+        </script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+.MainRow{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));  
+}
+
+.genericContainer {
+    border: 1px solid#777777;
+}
+
+
