@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 
-<head> </head>
+<head> 
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="main.css">
+    <script type="text/javascript" src="main.js" defer></script>
+</head>
 <body> 
-    <div class="MainRow">
-        <div class="genericContainer">This is container 1</div>
-        <div class="genericContainer">This is container 2</div>
-        <div class="genericContainer">This is container 3</div>
+
+    <h2>Phone Directory</h2>
+    <div class="add_contact">
+        <form>
+            <input type="text" id="ContantName" name="Cname" placeholder="Contact Name" required>
+            <input type="text" id="Phonenr" name="Pnumber" placeholder="Phone number" required>
+            <input type="email" id="Email" name="Email" placeholder="Email" required>
+            <input type="submit" name='submit' value="add contact">
+          </form>
+    <div id ="error"> No empty fields allowed!</div>
+    </div>
+    <div id = tablecontainer> 
+        <table id = returntable>
+            <tr>
+              <th>Name</th>
+              <th>Mobile</th>
+              <th>Email</th>
+            </tr>
+        </table>
+
+        <tbody>
+            <tr>
+
+            </tr>
+        </tbody>
     </div>
 </body>
 

@@ -8,15 +8,52 @@
 
     <body>
         <script>
+            var freqMap = {};
+            function wordFreq(string) {
+                var words = string.replace(/[.]/g, '').split(/\s/); //regex to split the words by whitespace.
+                
+                words.forEach(function(w) {
+                    if (!freqMap[w]) {
+                        freqMap[w] = 0;
+                    }
+                    freqMap[w] += 1;
+                });
+            }
             const pro_url = 'http://jsonplaceholder.typicode.com/posts' //creating a contsant of the url givene to easier call it later
             fetch(pro_url)
             .then(response => response.json())
-            .then(json => console.log(json))
-           /* async function getHead() {
-                const response = await fetch(pro_url);
-                console.log(response);
-            }
-            getHead();*/
+            .then (json => json.forEach( (element) => {
+                if (element.title.split(" ").length >= 6){
+                    console.log(element.title)
+                }
+            }))
+
+            fetch(pro_url)
+            .then(response => response.json())
+            .then (json => json.forEach(
+                (element)=>{
+                    wordFreq(element.title)
+                }
+            )
+               
+            )
+
+            console.log(freqMap);
+
+            
+            
+            /*
+            key => value
+
+
+            [pencil, crisp, comuputer, laptop, phone, penci computer, pencil]
+
+            pencil => 1
+            crips => 2
+            laptop => 1
+
+            */
+           
         </script>
     </body>
 </html>

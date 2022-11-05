@@ -5,7 +5,7 @@
     margin: 0;
   }
 
-.MainRow{
+.application{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));  
 }
