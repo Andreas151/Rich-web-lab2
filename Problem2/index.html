@@ -8,22 +8,22 @@
 
     <body>
         <script>
-            var freqMap = {};
+            var WordMap = {};
             function wordFreq(string) {
                 var words = string.replace(/[.]/g, '').split(/\s/); //regex to split the words by whitespace.
                 
-                words.forEach(function(w) {
-                    if (!freqMap[w]) {
-                        freqMap[w] = 0;
+                words.forEach(function(my_Word) {
+                    if (!WordMap[my_Word]) { //goes through every element and checks if it's a part of the list or not. if it is then ad 1 to the count and if not ad a 0 
+                        WordMap[my_Word] = 0; // adds the 0 here meaning first time the word came up
                     }
-                    freqMap[w] += 1;
+                    WordMap[my_Word] += 1; //adds one to the count as the word has been seen before.
                 });
             }
             const pro_url = 'http://jsonplaceholder.typicode.com/posts' //creating a contsant of the url givene to easier call it later
             fetch(pro_url)
             .then(response => response.json())
-            .then (json => json.forEach( (element) => {
-                if (element.title.split(" ").length >= 6){
+            .then (json => json.forEach( (element) => { // using a foreach to to go through every elenent
+                if (element.title.split(" ").length >= 6){  // splitting the elements so that I can count words instead of letters 
                     console.log(element.title)
                 }
             }))
@@ -38,21 +38,7 @@
                
             )
 
-            console.log(freqMap);
-
-            
-            
-            /*
-            key => value
-
-
-            [pencil, crisp, comuputer, laptop, phone, penci computer, pencil]
-
-            pencil => 1
-            crips => 2
-            laptop => 1
-
-            */
+            console.log(WordMap);
            
         </script>
     </body>
