@@ -9,7 +9,7 @@
     <body>
         <script>
             var WordMap = {};
-            function wordFreq(string) {
+            function wordCounter(string) {
                 var words = string.replace(/[.]/g, '').split(/\s/); //regex to split the words by whitespace.
                 
                 words.forEach(function(my_Word) {
@@ -32,7 +32,7 @@
             .then(response => response.json())
             .then (json => json.forEach(
                 (element)=>{
-                    wordFreq(element.title)
+                    wordCounter(element.title)
                 }
             )
                
